@@ -112,6 +112,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        sed -i 's/llvm=true/llvm=if-unchanged/g' package/feeds/packages/rust/Makefile
 
     - name: 下载软件包
       id: package
